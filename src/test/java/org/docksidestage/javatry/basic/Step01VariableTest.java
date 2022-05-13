@@ -210,10 +210,20 @@ public class Step01VariableTest extends PlainTestCase {
      * _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
      * your question here (ここにあなたの質問を):
      * インスタンス変数、名前はpiari2, 型はint, 初期値5
+     * ローカル変数、名前はland, 型はInteger, 初期値は null
+     * ローカル変数、名前はsea, 型はString, 初期値は ""
+     * piari2をlandに代入して、seaにlandを代入してlogに表示する。
      * _/_/_/_/_/_/_/_/_/_/
      * </pre>
      */
+    private int piari2 = 5;
+
     public void test_variable_yourExercise() {
         // write your code here
+        String sea = "";
+        Integer land = null;
+        land = piari2;
+        sea = String.valueOf(land);
+        log(sea);
     }
 }
