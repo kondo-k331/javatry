@@ -180,7 +180,8 @@ public class Step02IfForTest extends PlainTestCase {
      */
     public void test_iffor_refactor_foreach_to_forEach() {
         List<String> stageList = prepareStageList();
-        String sea = null;
+        StringBuilder sea = new StringBuilder("");
+        ;
         //        for (String stage : stageList) {
         //            if (stage.startsWith("br")) {
         //                continue;
@@ -192,13 +193,15 @@ public class Step02IfForTest extends PlainTestCase {
         //        }
         stageList.forEach(act -> {
             int breakGA = 0;
+            int length = sea.length();
             if (act.startsWith("br")) {
                 return;
-            } else if (act.contains("ga") || breakGA == 1) {
+            }
+            sea.delete(0, length);
+            sea.append(act);
+            if (act.contains("ga") || breakGA == 1) {
                 breakGA = 1;
                 return;
-            } else {
-                sea = act;
             }
         });
         log(sea); // should be same as before-fix
