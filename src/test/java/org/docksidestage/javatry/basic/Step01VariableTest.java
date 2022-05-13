@@ -163,7 +163,7 @@ public class Step01VariableTest extends PlainTestCase {
         StringBuilder sea = new StringBuilder("harbor");
         int land = 415;
         helpMethodArgumentVariable(sea, land);
-        log(sea); // your answer? => harbor
+        log(sea); // your answer? => harbor（〇）
     }
 
     private void helpMethodArgumentVariable(StringBuilder sea, int land) {
@@ -191,8 +191,13 @@ public class Step01VariableTest extends PlainTestCase {
      * o すべての変数をlog()でカンマ区切りの文字列で表示
      * </pre>
      */
+    private int piari;
+
     public void test_variable_writing() {
         // define variables here
+        String sea = "mystic";
+        Integer land = null;
+        log(sea + "," + land + "," + piari);
     }
 
     // ===================================================================================
@@ -204,7 +209,7 @@ public class Step01VariableTest extends PlainTestCase {
      * <pre>
      * _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
      * your question here (ここにあなたの質問を):
-     * 
+     * インスタンス変数、名前はpiari2, 型はint, 初期値5
      * _/_/_/_/_/_/_/_/_/_/
      * </pre>
      */
