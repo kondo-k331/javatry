@@ -230,6 +230,36 @@ public class Step02IfForTest extends PlainTestCase {
      */
     public void test_iffor_yourExercise() {
         // write your code here
+        List<String> stageList = prepareStageList();
+        List<String> newList = new ArrayList<String>();
+        String sea = null;
+        stageList.forEach(listItem -> {
+            if (listItem.contains("o")) {
+                newList.add(listItem);
+            }
+            if (listItem.contains("l")) {
+                newList.add(listItem);
+            }
+        });
+        log(stageList);
+        log(newList);
+
+        List<String> sb = new ArrayList<String>();
+        newList.forEach(List -> {
+            if (List.contains("i")) {
+                sb.add(List);
+            }
+        });
+        log(sb);
+
+        for (String stage : sb) {
+            if (sb.contains("do")) {
+                continue;
+            }
+            sea = stage;
+        }
+
+        log(sea);
     }
 
     // ===================================================================================
