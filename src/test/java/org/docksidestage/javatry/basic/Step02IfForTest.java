@@ -178,32 +178,43 @@ public class Step02IfForTest extends PlainTestCase {
      * Change foreach statement to List's forEach() (keep result after fix) <br>
      * (foreach文をforEach()メソッドへの置き換えてみましょう (修正前と修正後で実行結果が同じになるように))
      */
+    private int breakGA = 0;
+
     public void test_iffor_refactor_foreach_to_forEach() {
         List<String> stageList = prepareStageList();
         StringBuilder sea = new StringBuilder("");
-        ;
-        //        for (String stage : stageList) {
-        //            if (stage.startsWith("br")) {
-        //                continue;
-        //            }
-        //            sea = stage;
-        //            if (stage.contains("ga")) {
-        //                break;
-        //            }
-        //        }
+        String oldsea = null;
+        for (String stage : stageList) {
+            if (stage.startsWith("br")) {
+                continue;
+            }
+            oldsea = stage;
+            if (stage.contains("ga")) {
+                break;
+            }
+        }
+        log(oldsea);
+
         stageList.forEach(act -> {
-            int breakGA = 0;
             int length = sea.length();
             if (act.startsWith("br")) {
                 return;
             }
-            sea.delete(0, length);
-            sea.append(act);
-            if (act.contains("ga") || breakGA == 1) {
-                breakGA = 1;
+            //            if (act.contains("ga") || breakGA == 1) {
+            //                breakGA = 1;
+            //                return;
+            //            }
+            if (breakGA == 1) {
                 return;
             }
+            if (act.contains("ga")) {
+                breakGA = 1;
+            }
+            sea.delete(0, length);
+            sea.append(act);
+
         });
+
         log(sea); // should be same as before-fix
     }
 
