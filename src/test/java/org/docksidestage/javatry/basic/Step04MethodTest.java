@@ -115,7 +115,7 @@ public class Step04MethodTest extends PlainTestCase {
         }
         ++sea;
         sea = inParkCount;
-        log(sea); // your answer? => 100
+        log(sea); // your answer? => 100(○)
     }
 
     private void offAnnualPassport(boolean hasAnnualPassport) {
@@ -152,12 +152,38 @@ public class Step04MethodTest extends PlainTestCase {
      */
     public void test_method_making() {
         // use after making these methods
-        //String replaced = replaceCwithB(replaceAwithB("ABC"));
-        //String sea = quote(replaced, "'");
-        //if (isAvailableLogging()) {
-        //    showSea(sea);
-        //}
+        String replaced = replaceCwithB(replaceAwithB("ABC"));
+        String sea = quote(replaced, "'");
+        if (isAvailableLogging()) {
+            showSea(sea);
+        }
     }
 
     // write methods here
+
+    private String replaceAwithB(String sea) {
+        String replacedAB = sea.replace("A", "B");
+        return replacedAB;
+    }
+
+    private String replaceCwithB(String sea) {
+        String replacedCB = sea.replace("C", "B");
+        return replacedCB;
+    }
+
+    private String quote(String sea, String quotation) {
+        String replacedQuote = quotation + sea + quotation;
+        return replacedQuote;
+    }
+
+    private boolean availableLoggingt = true;
+
+    private boolean isAvailableLogging() {
+        boolean boo = availableLoggingt;
+        return boo;
+    }
+
+    private void showSea(String sea) {
+        log(sea);
+    }
 }
